@@ -1,0 +1,25 @@
+{
+  "name": "flowerly-friends-website",
+  "version": "1.0.0",
+  "description": "Flowerly Friends Collection - Simple Static Website",
+  "main": "index.html",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "playwright": "npx playwright-mcp"
+  },
+  "keywords": [
+    "website",
+    "static",
+    "flowerly-friends"
+  ],
+  "author": "Flowerly Friends",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "dependencies": {
+    "playwright": "^1.53.1",
+    "playwright-mcp": "^0.0.12"
+  }
+}
