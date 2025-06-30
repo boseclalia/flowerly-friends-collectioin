@@ -122,7 +122,7 @@
             font-size: 48px;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 16px;
+            margin-bottom: 0;
             background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -134,7 +134,7 @@
             font-family: 'Times New Roman', serif;
             text-align: center;
             color: #666;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
         
         .about-content {
@@ -156,7 +156,7 @@
         .slider-track {
             display: flex;
             width: calc(320px * 10);
-            animation: slide 40s linear infinite;
+            animation: slide 50s linear infinite;
         }
         
         .slide {
@@ -172,6 +172,117 @@
             font-size: 14px;
             text-align: center;
             border: 1px solid #ddd;
+            overflow: hidden;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        
+        /* メンバーボタン */
+        .member-links {
+            text-align: center;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .member-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(179, 157, 219, 0.2);
+        }
+        
+        .member-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(179, 157, 219, 0.3);
+        }
+        
+        /* モーダル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            padding: 32px;
+            border-radius: 16px;
+            width: 80%;
+            max-width: 600px;
+            max-height: 70%;
+            overflow-y: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 16px;
+        }
+        
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            margin: 0;
+        }
+        
+        .close {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        
+        .close:hover {
+            color: #f0f0f0;
+        }
+        
+        .member-list {
+            text-align: left;
+            line-height: 1.8;
+        }
+        
+        .member-list p {
+            margin: 8px 0;
+            font-size: 14px;
+            color: white;
+        }
+        
+        .member-count {
+            margin-top: 16px;
+            font-weight: bold;
+            color: white;
+            font-size: 16px;
         }
         
         @keyframes slide {
@@ -179,32 +290,18 @@
             100% { transform: translateX(-1600px); }
         }
         
-        .speed-controls {
-            text-align: center;
-            margin-top: 16px;
-        }
-        
-        .speed-btn {
-            padding: 8px 16px;
-            margin: 0 4px;
-            border: 1px solid #ddd;
-            background: #fff;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .speed-btn:hover {
-            background: #f0f0f0;
-        }
         
         /* セクション */
         section {
-            border: 1px solid #e8e0d0;
             margin-bottom: 32px;
             padding: 32px;
+        }
+        
+        /* About セクション背景 */
+        .about-section {
+            background-color: white;
             border-radius: 16px;
+            padding-bottom: 24px;
         }
         
         /* セクションタイトル */
@@ -433,7 +530,7 @@
     </header>
 
     <!-- About -->
-    <section>
+    <section class="about-section">
         <div class="container">
             <h2 class="about-title">About</h2>
             <h3 class="about-subtitle">フラコレについて</h3>
@@ -442,23 +539,21 @@
             </div>
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
-                    <div class="slide">フラコレ 2024<br>会場の様子</div>
-                    <div class="slide">アート展示<br>作品紹介</div>
-                    <div class="slide">コスプレイベント<br>参加者の皆様</div>
-                    <div class="slide">作品販売<br>クリエイター</div>
-                    <div class="slide">フラワリー<br>フレンズ</div>
-                    <div class="slide">フラコレ 2024<br>会場の様子</div>
-                    <div class="slide">アート展示<br>作品紹介</div>
-                    <div class="slide">コスプレイベント<br>参加者の皆様</div>
-                    <div class="slide">作品販売<br>クリエイター</div>
-                    <div class="slide">フラワリー<br>フレンズ</div>
+                    <div class="slide"><img src="content/images/02_past-events/1.webp" alt="フラコレ 2024 会場の様子"></div>
+                    <div class="slide"><img src="content/images/02_past-events/2.webp" alt="アート展示 作品紹介"></div>
+                    <div class="slide"><img src="content/images/02_past-events/3.webp" alt="コスプレイベント 参加者の皆様"></div>
+                    <div class="slide"><img src="content/images/02_past-events/4.webp" alt="作品販売 クリエイター"></div>
+                    <div class="slide"><img src="content/images/02_past-events/5.webp" alt="フラワリー フレンズ"></div>
+                    <div class="slide"><img src="content/images/02_past-events/1.webp" alt="フラコレ 2024 会場の様子"></div>
+                    <div class="slide"><img src="content/images/02_past-events/2.webp" alt="アート展示 作品紹介"></div>
+                    <div class="slide"><img src="content/images/02_past-events/3.webp" alt="コスプレイベント 参加者の皆様"></div>
+                    <div class="slide"><img src="content/images/02_past-events/4.webp" alt="作品販売 クリエイター"></div>
+                    <div class="slide"><img src="content/images/02_past-events/5.webp" alt="フラワリー フレンズ"></div>
                 </div>
             </div>
-            <div class="speed-controls">
-                <button class="speed-btn" onclick="changeSpeed(40)">ゆっくり</button>
-                <button class="speed-btn" onclick="changeSpeed(20)">普通</button>
-                <button class="speed-btn" onclick="changeSpeed(10)">速い</button>
-                <button class="speed-btn" onclick="changeSpeed(4)">超速</button>
+            <div class="member-links">
+                <button class="member-btn" onclick="openModal('2024')">2024年の参加メンバーはこちら＞</button>
+                <button class="member-btn" onclick="openModal('2025')">2025年の参加メンバーはこちら＞</button>
             </div>
         </div>
     </section>
@@ -696,10 +791,141 @@
         </div>
     </footer>
 
+    <!-- メンバーモーダル -->
+    <div id="memberModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">参加メンバー</h3>
+                <button class="close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="memberList" class="member-list">
+                <!-- メンバー一覧がここに表示されます -->
+            </div>
+        </div>
+    </div>
+
     <script>
-        function changeSpeed(duration) {
-            const track = document.getElementById('sliderTrack');
-            track.style.animationDuration = duration + 's';
+        const members = {
+            '2024': [
+                'AN',
+                'CloudDragon',
+                'Energetic SEI',
+                'gamaccho',
+                'hal horii art',
+                'imoto',
+                'mag',
+                'masapon',
+                'Megumi',
+                'Mayu Manson',
+                'mera takeru',
+                'milk',
+                'Pop',
+                'RITAfuji',
+                'Risa',
+                'Satoshi Miyachi',
+                'SOUPGIRLS',
+                'ten.draws',
+                'YOSHEN',
+                '6maker',
+                '99+Witches',
+                'いすむ',
+                '芋野ようかん',
+                'うじゅうな',
+                'おすいち',
+                'カラフルまじっく',
+                'しゅんたま',
+                'たろなん',
+                'ダリンリヒ',
+                'ちぃまる',
+                'デルム',
+                '中原けい',
+                'にしけん',
+                'のざ',
+                'ほーらい',
+                'みうらドーナツ',
+                '由美',
+                '吉澤知美',
+                'Flowerly Friends'
+            ],
+            '2025': [
+                'カラフルまじっく',
+                '中原けい',
+                'SOUPGIRLS',
+                'しゅんたま',
+                'cloudDragon',
+                'Aoyama',
+                'halhoriiart',
+                'のざ',
+                'ほーらい',
+                '6maker',
+                'mera takeru',
+                'YOSHEN',
+                'みうらドーナツ',
+                'ma―kun',
+                'FUZZ GAFF',
+                'じゃくそん',
+                'Hope',
+                'rocoxxx (ロコ)',
+                'まさぽん',
+                'ten.draws',
+                'Amane',
+                'ままりも',
+                'ゆうみに',
+                'eno',
+                '由美',
+                'DotAnimals',
+                'DR.ツボ',
+                'OVIVA',
+                'RITA Fujita',
+                'shiva_ko_',
+                'Wafu',
+                'ええまゆ',
+                'クシャ',
+                'ダリンリヒ',
+                'もふちゅん',
+                'やすきよ',
+                'ゆうゆう。',
+                'よこやまひろこ',
+                '藤米ちこ',
+                '碧水(hekisui)',
+                'いすむ',
+                'Flowerly Friends'
+            ]
+        };
+
+        function openModal(year) {
+            const modal = document.getElementById('memberModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const memberList = document.getElementById('memberList');
+            
+            modalTitle.textContent = year + '年 参加メンバー';
+            
+            memberList.innerHTML = '';
+            members[year].forEach(member => {
+                const memberItem = document.createElement('p');
+                memberItem.textContent = member;
+                memberList.appendChild(memberItem);
+            });
+            
+            // メンバー数を表示
+            const countItem = document.createElement('div');
+            countItem.className = 'member-count';
+            countItem.textContent = `計${members[year].length}名`;
+            memberList.appendChild(countItem);
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('memberModal').style.display = 'none';
+        }
+
+        // モーダル外をクリックしたら閉じる
+        window.onclick = function(event) {
+            const modal = document.getElementById('memberModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
