@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ==============================
            完成版CSS
@@ -24,7 +25,7 @@
             font-family: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #faf8f0;
+            background-color: #fef5ff;
             font-size: 16px;
         }
         
@@ -35,12 +36,16 @@
             padding: 0 16px;
         }
         
+        /* Joinセクションのコンテナ */
+        .join-section .container {
+            padding: 24px;
+        }
+        
         /* ヘッダー */
         .header {
             padding: 48px 32px;
             margin-bottom: 32px;
             text-align: center;
-            border-radius: 0 0 24px 24px;
         }
         
         .logo-area {
@@ -112,17 +117,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: #faf8f0;
+            background-color: #fef5ff;
             border-radius: 10px;
             z-index: -1;
         }
         
         /* Aboutセクション */
         .about-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
             font-size: 48px;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
             margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .schedule-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
             background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -130,6 +150,14 @@
         }
         
         .about-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .schedule-subtitle {
             font-size: 16px;
             font-family: 'Times New Roman', serif;
             text-align: center;
@@ -293,15 +321,18 @@
         
         /* セクション */
         section {
-            margin-bottom: 32px;
+            margin-bottom: 0;
             padding: 32px;
         }
         
         /* About セクション背景 */
         .about-section {
-            background-color: white;
-            border-radius: 16px;
             padding-bottom: 24px;
+        }
+        
+        /* スケジュールセクション */
+        .schedule-section {
+            padding-bottom: 12px;
         }
         
         /* セクションタイトル */
@@ -361,21 +392,190 @@
         }
         
         /* スケジュールリスト */
+        .schedule-year {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            color: #b39ddb;
+            margin-bottom: 16px;
+            display: inline-block;
+            border: 2px solid #b39ddb;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+        
         .schedule-list {
-            border: 1px solid #ccc;
-            padding: 24px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 24px 24px 12px 24px;
+            margin-bottom: 16px;
         }
         
         .schedule-item {
-            border-bottom: 1px solid #ccc;
-            padding: 16px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-bottom: 1px solid rgba(179, 157, 219, 0.2);
+            padding: 12px 0;
+            font-size: 16px;
         }
         
         .schedule-item:last-child {
             border-bottom: none;
+        }
+        
+        .schedule-line {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .schedule-note {
+            font-size: 14px;
+            color: #b39ddb;
+            margin-bottom: 8px;
+        }
+        
+        .schedule-entrance-fee {
+            text-align: center;
+            margin-top: 24px;
+        }
+        
+        /* Placeセクション */
+        .place-section {
+            padding-bottom: 24px;
+        }
+        
+        .place-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .place-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
+        .place-content {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .venue-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        
+        .venue-address {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 16px;
+            text-align: center;
+            line-height: 1.6;
+        }
+        
+        .venue-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 16px auto;
+            display: block;
+        }
+        
+        .venue-link {
+            text-align: center;
+            margin-top: 16px;
+        }
+        
+        .venue-link a {
+            color: #b39ddb;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .venue-link a:hover {
+            color: #9575cd;
+            text-decoration: underline;
+        }
+        
+        /* Joinセクション */
+        .join-section {
+            background: linear-gradient(135deg, #8e24aa 0%, #ad1457 100%);
+            padding-bottom: 24px;
+        }
+        
+        .join-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            color: white;
+        }
+        
+        .join-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+        }
+        
+        .join-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: white;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        
+        .join-image {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 24px auto;
+            display: block;
+        }
+        
+        .join-button-container {
+            text-align: center;
+            margin-top: 24px;
+        }
+        
+        .join-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(179, 157, 219, 0.2);
+        }
+        
+        .join-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(179, 157, 219, 0.3);
         }
         
         /* 会場情報 */
@@ -454,30 +654,56 @@
         }
         
         /* スタッフセクション */
+        .staff-section {
+            padding-bottom: 24px;
+        }
+        
+        .staff-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .staff-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+        }
+        
         .staff-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .staff-card {
-            border: 1px solid #ccc;
-            padding: 24px;
             text-align: center;
         }
         
         .staff-image {
-            border: 1px solid #999;
-            background-color: #f5f5f5;
             width: 100px;
             height: 100px;
-            margin: 0 auto 16px;
+            object-fit: cover;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 12px;
+            margin: 0 auto 8px;
+            display: block;
+        }
+        
+        .staff-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
         }
         
         /* フッター */
@@ -525,7 +751,6 @@
                 <p>お花をモチーフにした作品が集うFlowerly Friends Collection（フラコレ）。フラワリーフレンズの多才な仲間たちのアートを楽しみ寄付活動もできるアート展示会を2026年2月に開催します。</p>
             </div>
             <div class="organizer">主催：Flowerly Friends Cosplay</div>
-            <div class="entrance-fee">入場無料</div>
         </div>
     </header>
 
@@ -559,53 +784,65 @@
     </section>
 
     <!-- スケジュール -->
-    <section>
+    <section class="schedule-section">
         <div class="container">
-            <h2 class="section-title">スケジュール</h2>
-            <div class="schedule-list" id="schedule-section">
+            <h2 class="schedule-title">Schedule</h2>
+            <h3 class="schedule-subtitle">スケジュール</h3>
+            <div class="schedule-list">
+                <div class="schedule-year">2026</div>
                 <div class="schedule-item">
-                    <span>2/11（火）</span>
-                    <span>11:00-19:00</span>
+                    <div class="schedule-line">2/10（火） 11:00-19:00</div>
                 </div>
                 <div class="schedule-item">
-                    <span>2/12（水）</span>
-                    <span>11:00-19:00</span>
+                    <div class="schedule-line">2/11（水） 11:00-19:00</div>
                 </div>
                 <div class="schedule-item">
-                    <span>2/13（木）</span>
-                    <span>11:00-19:00</span>
+                    <div class="schedule-line">2/12（木） 11:00-19:00</div>
                 </div>
                 <div class="schedule-item">
-                    <span>2/14（金）</span>
-                    <span>11:00-19:00</span>
+                    <div class="schedule-line">2/13（金） 11:00-19:00</div>
                 </div>
                 <div class="schedule-item">
-                    <span>2/15（土）</span>
-                    <span>15:30-19:00</span>
+                    <div class="schedule-line">2/14（土） 15:30-19:00</div>
+                    <div class="schedule-note">12:00〜15:00はオフ会を開催</div>
                 </div>
                 <div class="schedule-item">
-                    <span>(12:00〜15:00はしらたまオフ会開催のため)</span>
-                    <span></span>
+                    <div class="schedule-line">2/15（日） 11:00-15:00</div>
                 </div>
-                <div class="schedule-item">
-                    <span>2/16（日）</span>
-                    <span>11:00-15:00</span>
-                </div>
+            </div>
+            <div class="schedule-entrance-fee">
+                <div class="entrance-fee">入場無料</div>
             </div>
         </div>
     </section>
 
     <!-- 開催場所 -->
-    <section>
+    <section class="place-section">
         <div class="container">
-            <h2 class="section-title">開催場所</h2>
-            <div class="venue-info" id="venue-section">
-                <h3>キチジョウジギャラリー</h3>
-                <p>住所：東京都三鷹市井の頭3−32−16 セブンスターマンション105</p>
-                <div class="map-area">
-                    Google Maps エリア<br>800px × 250px
+            <h2 class="place-title">Place</h2>
+            <h3 class="place-subtitle">開催場所</h3>
+            <div class="place-content">
+                <div class="venue-name">キチジョウジギャラリー</div>
+                <div class="venue-address">東京都三鷹市井の頭3−32−16 セブンスターマンション105</div>
+                <img src="content/images/04_venue/place.webp" alt="キチジョウジギャラリー" class="venue-image">
+                <div class="venue-link">
+                    <a href="http://kichijojigallery.com/" target="_blank">ギャラリー詳細はこちら</a>
                 </div>
-                <a href="#" class="link">ギャラリー詳細はこちら</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join -->
+    <section class="join-section">
+        <div class="container">
+            <h2 class="join-title">Join</h2>
+            <h3 class="join-subtitle">参加募集</h3>
+            <div class="join-description">
+                第３回目となるフラコレにアート作品を展示しませんか？お花をテーマにした作品ならなんでもOK！これまで制作したものや新作も大歓迎です。参加の申し込みはDiscordのコミュニティで受付中！
+            </div>
+            <img src="content/images/05_join/join.webp" alt="参加募集" class="join-image">
+            <div class="join-button-container">
+                <a href="#" class="join-button">参加申し込みはこちら</a>
             </div>
         </div>
     </section>
@@ -760,25 +997,34 @@
     </section>
 
     <!-- 運営メンバー -->
-    <section>
+    <section class="staff-section">
         <div class="container">
-            <h2 class="section-title">運営メンバー</h2>
-            <div class="staff-grid" id="staff-section">
+            <h2 class="staff-title">Member</h2>
+            <h3 class="staff-subtitle">運営メンバー</h3>
+            <div class="staff-grid">
                 <div class="staff-card">
-                    <div class="staff-image">スタッフ画像</div>
-                    <p><strong>kann</strong></p>
+                    <img src="content/images/10_staff/kann.webp" alt="kann" class="staff-image">
+                    <div class="staff-name">kann</div>
                 </div>
                 <div class="staff-card">
-                    <div class="staff-image">スタッフ画像</div>
-                    <p><strong>由美</strong></p>
+                    <img src="content/images/10_staff/由美.webp" alt="由美" class="staff-image">
+                    <div class="staff-name">由美</div>
                 </div>
                 <div class="staff-card">
-                    <div class="staff-image">スタッフ画像</div>
-                    <p><strong>Pop</strong></p>
+                    <img src="content/images/10_staff/Pop.webp" alt="Pop" class="staff-image">
+                    <div class="staff-name">Pop</div>
                 </div>
                 <div class="staff-card">
-                    <div class="staff-image">スタッフ画像</div>
-                    <p><strong>いすむ</strong></p>
+                    <img src="content/images/10_staff/いすむ.webp" alt="いすむ" class="staff-image">
+                    <div class="staff-name">いすむ</div>
+                </div>
+                <div class="staff-card">
+                    <img src="content/images/10_staff/haruchi.webp" alt="haruchi" class="staff-image">
+                    <div class="staff-name">haruchi</div>
+                </div>
+                <div class="staff-card">
+                    <img src="content/images/10_staff/キメラゴリラ.webp" alt="キメラゴリラ" class="staff-image">
+                    <div class="staff-name">キメラゴリラ</div>
                 </div>
             </div>
         </div>
