@@ -25,7 +25,7 @@
             font-family: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #fef5ff;
+            background-color: #fef2ff;
             font-size: 16px;
         }
         
@@ -81,45 +81,21 @@
             padding: 0 32px;
         }
         
-        .entrance-fee {
+        .schedule-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            gap: 24px;
+        }
+        
+        .entrance-fee-inline {
             background: linear-gradient(135deg, #ff79a6 0%, #ff197e 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            padding: 8px 24px;
-            border-radius: 10px;
             font-weight: 500;
             font-size: 16px;
             display: inline-block;
-            border: 2px solid transparent;
-            background-color: transparent;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .entrance-fee::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #ff79a6 0%, #ff197e 100%);
-            border-radius: 12px;
-            z-index: -1;
-        }
-        
-        .entrance-fee::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #fef5ff;
-            border-radius: 10px;
-            z-index: -1;
         }
         
         /* Aboutセクション */
@@ -155,6 +131,7 @@
             text-align: center;
             color: #666;
             margin-bottom: 24px;
+            letter-spacing: 0.1em;
         }
         
         .schedule-subtitle {
@@ -163,6 +140,7 @@
             text-align: center;
             color: #666;
             margin-bottom: 24px;
+            letter-spacing: 0.1em;
         }
         
         .about-content {
@@ -223,7 +201,7 @@
         .member-btn {
             display: inline-block;
             padding: 12px 24px;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(135deg, #73bac7 0%, #7f7ccd 100%);
             color: white;
             text-decoration: none;
             font-size: 14px;
@@ -232,12 +210,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: none;
-            box-shadow: 0 2px 8px rgba(179, 157, 219, 0.2);
+            box-shadow: 0 2px 8px rgba(115, 186, 199, 0.2);
         }
         
         .member-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(179, 157, 219, 0.3);
+            box-shadow: 0 4px 12px rgba(115, 186, 199, 0.3);
         }
         
         /* モーダル */
@@ -253,7 +231,7 @@
         }
         
         .modal-content {
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(135deg, #73bac7 0%, #7f7ccd 100%);
             padding: 32px;
             border-radius: 16px;
             width: 80%;
@@ -327,7 +305,7 @@
         
         /* About セクション背景 */
         .about-section {
-            padding-bottom: 24px;
+            padding-bottom: 36px;
         }
         
         /* スケジュールセクション */
@@ -344,6 +322,7 @@
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            letter-spacing: 0.08em;
         }
         
         /* グリッドレイアウト */
@@ -432,10 +411,6 @@
             margin-bottom: 8px;
         }
         
-        .schedule-entrance-fee {
-            text-align: center;
-            margin-top: 24px;
-        }
         
         /* Placeセクション */
         .place-section {
@@ -461,6 +436,7 @@
             text-align: center;
             color: #666;
             margin-bottom: 24px;
+            letter-spacing: 0.1em;
         }
         
         .place-content {
@@ -514,7 +490,7 @@
         
         /* Joinセクション */
         .join-section {
-            background: linear-gradient(135deg, #8e24aa 0%, #ad1457 100%);
+            background: linear-gradient(135deg, #9980c6 0%, #f29bc6 100%);
             padding-bottom: 24px;
         }
         
@@ -534,6 +510,7 @@
             text-align: center;
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 24px;
+            letter-spacing: 0.1em;
         }
         
         .join-description {
@@ -561,8 +538,8 @@
         .join-button {
             display: inline-block;
             padding: 16px 32px;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
-            color: white;
+            background: white;
+            color: #ff79a6;
             text-decoration: none;
             font-size: 16px;
             font-weight: 500;
@@ -570,12 +547,22 @@
             cursor: pointer;
             transition: all 0.3s ease;
             border: none;
-            box-shadow: 0 2px 8px rgba(179, 157, 219, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 121, 166, 0.6);
+            animation: glow 2s ease-in-out infinite alternate;
         }
         
         .join-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(179, 157, 219, 0.3);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35), 0 0 40px rgba(255, 121, 166, 0.8);
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 121, 166, 0.6);
+            }
+            to {
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 40px rgba(255, 121, 166, 0.9);
+            }
         }
         
         /* 会場情報 */
@@ -677,6 +664,7 @@
             text-align: center;
             color: #666;
             margin-bottom: 24px;
+            letter-spacing: 0.1em;
         }
         
         .staff-grid {
@@ -789,7 +777,10 @@
             <h2 class="schedule-title">Schedule</h2>
             <h3 class="schedule-subtitle">スケジュール</h3>
             <div class="schedule-list">
-                <div class="schedule-year">2026</div>
+                <div class="schedule-header">
+                    <div class="schedule-year">2026</div>
+                    <div class="entrance-fee-inline">入場無料</div>
+                </div>
                 <div class="schedule-item">
                     <div class="schedule-line">2/10（火） 11:00-19:00</div>
                 </div>
@@ -809,9 +800,6 @@
                 <div class="schedule-item">
                     <div class="schedule-line">2/15（日） 11:00-15:00</div>
                 </div>
-            </div>
-            <div class="schedule-entrance-fee">
-                <div class="entrance-fee">入場無料</div>
             </div>
         </div>
     </section>
@@ -835,14 +823,14 @@
     <!-- Join -->
     <section class="join-section">
         <div class="container">
-            <h2 class="join-title">Join</h2>
-            <h3 class="join-subtitle">参加募集</h3>
+            <h2 class="join-title">Join!</h2>
+            <h3 class="join-subtitle">出展者募集</h3>
             <div class="join-description">
-                第３回目となるフラコレにアート作品を展示しませんか？お花をテーマにした作品ならなんでもOK！これまで制作したものや新作も大歓迎です。参加の申し込みはDiscordのコミュニティで受付中！
+                第３回目のフラコレにアート作品を展示しませんか？お花をテーマにした作品ならなんでもOK！これまで制作したものや新作も大歓迎です。出展について詳しい情報や申し込みはDiscord（コミュニティ）にて！
             </div>
             <img src="content/images/05_join/join.webp" alt="参加募集" class="join-image">
             <div class="join-button-container">
-                <a href="#" class="join-button">参加申し込みはこちら</a>
+                <a href="#" class="join-button">出展の申し込みはこちら</a>
             </div>
         </div>
     </section>
