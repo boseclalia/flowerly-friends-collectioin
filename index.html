@@ -68,7 +68,7 @@
             line-height: 1.7;
             color: #555;
             margin-bottom: 16px;
-            text-align: left;
+            text-align: center;
             padding: 0 32px;
         }
         
@@ -77,7 +77,7 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
-            text-align: left;
+            text-align: center;
             padding: 0 32px;
         }
         
@@ -89,10 +89,7 @@
         }
         
         .entrance-fee-inline {
-            background: linear-gradient(135deg, #ff79a6 0%, #ff197e 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ff79a6;
             font-weight: 500;
             font-size: 16px;
             display: inline-block;
@@ -106,10 +103,11 @@
             text-align: center;
             margin-bottom: 0;
             letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            padding: 16px 16px 0 16px;
         }
         
         .schedule-title {
@@ -119,7 +117,7 @@
             text-align: center;
             margin-bottom: 0;
             letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -132,6 +130,7 @@
             color: #666;
             margin-bottom: 24px;
             letter-spacing: 0.1em;
+            padding: 0 16px;
         }
         
         .schedule-subtitle {
@@ -148,15 +147,17 @@
             line-height: 1.8;
             color: #555;
             margin-bottom: 32px;
+            padding: 0 40px;
         }
         
         /* 連続スライダー */
         .slider-container {
             width: 100%;
-            height: 300px;
+            height: 250px;
             overflow: hidden;
             position: relative;
             border-radius: 16px;
+            margin: 0;
         }
         
         .slider-track {
@@ -166,8 +167,8 @@
         }
         
         .slide {
-            min-width: 280px;
-            height: 300px;
+            min-width: 250px;
+            height: 250px;
             margin-right: 20px;
             border-radius: 15px;
             background: #f5f5f5;
@@ -182,8 +183,8 @@
         }
         
         .slide img {
-            width: 100%;
-            height: 100%;
+            width: 250px;
+            height: 250px;
             object-fit: cover;
             border-radius: 15px;
         }
@@ -192,6 +193,7 @@
         .member-links {
             text-align: center;
             margin-top: 24px;
+            padding: 0 16px 36px 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -231,7 +233,7 @@
         }
         
         .modal-content {
-            background: linear-gradient(135deg, #73bac7 0%, #7f7ccd 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             padding: 32px;
             border-radius: 16px;
             width: 80%;
@@ -274,7 +276,7 @@
         }
         
         .member-list {
-            text-align: left;
+            text-align: center;
             line-height: 1.8;
         }
         
@@ -305,7 +307,7 @@
         
         /* About セクション背景 */
         .about-section {
-            padding-bottom: 36px;
+            padding: 0;
         }
         
         /* スケジュールセクション */
@@ -424,7 +426,7 @@
             text-align: center;
             margin-bottom: 0;
             letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -490,7 +492,7 @@
         
         /* Joinセクション */
         .join-section {
-            background: linear-gradient(135deg, #9980c6 0%, #f29bc6 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             padding-bottom: 24px;
         }
         
@@ -518,7 +520,7 @@
             line-height: 1.8;
             color: white;
             margin-bottom: 24px;
-            text-align: left;
+            text-align: center;
         }
         
         .join-image {
@@ -640,6 +642,421 @@
             margin-bottom: 8px;
         }
         
+        /* メンバーセクション */
+        .members-section {
+            padding-bottom: 24px;
+        }
+        
+        .members-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .members-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .members-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 32px;
+            text-align: left;
+            padding: 0 24px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .member-card {
+            border: 1px solid #ccc;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .member-image-placeholder {
+            border: 1px solid #999;
+            background-color: #f5f5f5;
+            height: 100px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .member-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* グッズセクション */
+        .goods-section {
+            padding-bottom: 24px;
+        }
+        
+        .goods-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .goods-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .goods-content {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 32px;
+            text-align: left;
+            padding: 0 24px;
+        }
+        
+        .goods-section {
+            padding-bottom: 36px;
+        }
+        
+        .goods-notes {
+            margin-top: 16px;
+        }
+        
+        .goods-notes .note {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        
+        .goods-image {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 24px auto;
+            display: block;
+            border: 2px solid white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 出展メンバーセクション */
+        .members-section {
+            padding-bottom: 36px;
+        }
+        
+        .members-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .members-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .members-description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 32px;
+            text-align: left;
+            padding: 0 24px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .member-card {
+            text-align: left;
+        }
+        
+        .member-image-placeholder {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 8px;
+            display: block;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+            font-size: 12px;
+        }
+        
+        .member-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* 作品販売セクション */
+        .artwork-section {
+            padding-bottom: 36px;
+        }
+        
+        .artwork-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .artwork-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .artwork-content {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 32px;
+            text-align: left;
+            padding: 0 24px;
+        }
+        
+        .artwork-note {
+            font-size: 12px;
+            color: #888;
+            margin-top: 16px;
+        }
+        
+        .artwork-button-container {
+            text-align: center;
+            margin-top: 24px;
+        }
+        
+        .artwork-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(115, 186, 199, 0.2);
+        }
+        
+        .artwork-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(115, 186, 199, 0.3);
+        }
+        
+        .artwork-image {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 24px auto;
+            display: block;
+        }
+        
+        /* 支援者セクション */
+        .supporters-section {
+            padding-bottom: 36px;
+        }
+        
+        .supporters-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .supporters-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .supporters-content {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        
+        .supporter-group {
+            margin-bottom: 32px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .supporter-category {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 16px;
+            text-align: center;
+            border-bottom: 2px solid #ff79a6;
+            padding-bottom: 8px;
+        }
+        
+        .supporter-names {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        
+        .supporter-column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .supporter-name {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        
+        /* 応援グッズセクション */
+        .support-goods-section {
+            padding-bottom: 36px;
+        }
+        
+        .support-goods-title {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .support-goods-subtitle {
+            font-size: 16px;
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            color: #666;
+            margin-bottom: 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .support-goods-content {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 32px;
+            text-align: left;
+            padding: 0 24px;
+        }
+        
+        .support-goods-button-container {
+            text-align: center;
+            margin-top: 24px;
+        }
+        
+        .support-goods-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 8px rgba(153, 128, 198, 0.2);
+        }
+        
+        .support-goods-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(153, 128, 198, 0.3);
+        }
+        
+        .support-goods-image {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin: 24px auto;
+            display: block;
+        }
+
         /* スタッフセクション */
         .staff-section {
             padding-bottom: 24px;
@@ -652,7 +1069,7 @@
             text-align: center;
             margin-bottom: 0;
             letter-spacing: 0.05em;
-            background: linear-gradient(135deg, #b39ddb 0%, #f8bbd9 100%);
+            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -676,7 +1093,7 @@
         }
         
         .staff-card {
-            text-align: center;
+            text-align: left;
         }
         
         .staff-image {
@@ -706,7 +1123,7 @@
         /* レスポンシブ */
         @media (max-width: 768px) {
             .container {
-                padding: 0 8px;
+                padding: 0 0px;
             }
             
             section {
@@ -795,7 +1212,7 @@
                 </div>
                 <div class="schedule-item">
                     <div class="schedule-line">2/14（土） 15:30-19:00</div>
-                    <div class="schedule-note">12:00〜15:00はオフ会を開催</div>
+                    <div class="schedule-note">12:00〜15:00はしらたまオフ会を開催</div>
                 </div>
                 <div class="schedule-item">
                     <div class="schedule-line">2/15（日） 11:00-15:00</div>
@@ -836,136 +1253,146 @@
     </section>
 
     <!-- グッズ販売 -->
-    <section>
+    <section class="goods-section">
         <div class="container">
-            <h2 class="section-title">グッズ販売</h2>
-            <div class="text-content" id="goods-section">
+            <h2 class="goods-title">Goods</h2>
+            <h3 class="goods-subtitle">グッズ販売</h3>
+            <div class="goods-content">
                 <p>クリエイターのグッズを販売します。<br>なお、売上の10％はTCP・チベット難民支援へ寄付をさせていただきます。</p>
-                <p class="note">※支払い方法は全て「PayPay」となります<br>※グッズの詳細は後日更新</p>
+                <div class="goods-notes">
+                    <p class="note">※支払い方法は全て「PayPay」となります</p>
+                    <p class="note">※グッズの詳細は後日更新</p>
+                </div>
             </div>
+            <img src="content/images/05_goods/4.webp" alt="グッズ販売" class="goods-image">
         </div>
     </section>
 
     <!-- 出展メンバー -->
-    <section>
+    <section class="members-section">
         <div class="container">
-            <h2 class="section-title">出展メンバー</h2>
-            <div id="members-description">
+            <h2 class="members-title">Creators</h2>
+            <h3 class="members-subtitle">出展クリエイター</h3>
+            <div class="members-description">
                 <p>フラコレ出展メンバーを紹介します。</p>
             </div>
-            <div class="card-grid" id="members-section">
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>碧水(hekisui)</p>
+            <div class="staff-grid">
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">碧水(hekisui)</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>6maker</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">6maker</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>ma—kun</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">ma—kun</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>ClouDragon</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">ClouDragon</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>藤米ちこ</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">藤米ちこ</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>hal horii art</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">hal horii art</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>ゆうゆう。</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">ゆうゆう。</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>やすきよ</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">やすきよ</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>masapon</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">masapon</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>よこやまひろこ</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">よこやまひろこ</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>もふりゅん</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">もふりゅん</div>
                 </div>
-                <div class="card">
-                    <div class="card-image">画像</div>
-                    <p>mera takeru</p>
+                <div class="staff-card">
+                    <div class="member-image-placeholder">画像</div>
+                    <div class="staff-name">mera takeru</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 作品販売 -->
-    <section>
+    <section class="artwork-section">
         <div class="container">
-            <h2 class="section-title">作品販売</h2>
-            <div class="text-content" id="artwork-sales-section">
-                <p>フラコレ2025の出展作品は、予約販売を承ります。<br>好きなクリエイターさんやお気に入りの作品を、<br>ぜひ探してみてください。</p>
-                <p class="note">※予約販売は、２月１５日の正午が締め切りとなります。</p>
-                <a href="#" class="link">作品販売ページはこちら</a>
+            <h2 class="artwork-title">Pre-Sale</h2>
+            <h3 class="artwork-subtitle">作品の予約販売</h3>
+            <div class="artwork-content">
+                <p>フラコレ2026の出展作品は、予約販売を承ります。<br>好きなクリエイターさんやお気に入りの作品を、<br>ぜひ探してみてください。</p>
+                <p class="artwork-note">※予約販売は、２月○○日の正午が締め切りとなります。</p>
+                <div class="artwork-button-container">
+                    <a href="#" class="artwork-button">作品販売ページはこちら</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- 支援者の皆様 -->
-    <section>
+    <section class="supporters-section">
         <div class="container">
-            <h2 class="section-title">フラコレ支援者の皆様</h2>
-            <div id="supporters-section">
-                <div class="supporter-section">
-                    <h3 class="supporter-title">ma—kun</h3>
-                    <div class="supporter-list">
-                        <div>
-                            <p>• MJマサさん</p>
-                            <p>• 牛乳屋さん</p>
-                            <p>• オッスさん</p>
-                            <p>• vasquezさん</p>
+            <h2 class="supporters-title">Supporter</h2>
+            <h3 class="supporters-subtitle">支援者のみなさま</h3>
+            <div class="supporters-content">
+                <div class="supporter-group">
+                    <h4 class="supporter-category">ma—kun</h4>
+                    <div class="supporter-names">
+                        <div class="supporter-column">
+                            <p class="supporter-name">• MJマサさん</p>
+                            <p class="supporter-name">• 牛乳屋さん</p>
+                            <p class="supporter-name">• オッスさん</p>
+                            <p class="supporter-name">• vasquezさん</p>
                         </div>
-                        <div>
-                            <p>• tetsucraftさん</p>
-                            <p>• ゆうみにさん</p>
-                            <p>• コジットさん</p>
-                            <p>• ママカラさん</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="supporter-section">
-                    <h3 class="supporter-title">ma—kun & コケミーお迎え</h3>
-                    <div class="supporter-list">
-                        <div>
-                            <p>• たけおさん</p>
-                            <p>• オッスさん</p>
-                        </div>
-                        <div>
-                            <p>• vasquezさん</p>
-                            <p>• tetsucraftさん</p>
+                        <div class="supporter-column">
+                            <p class="supporter-name">• tetsucraftさん</p>
+                            <p class="supporter-name">• ゆうみにさん</p>
+                            <p class="supporter-name">• コジットさん</p>
+                            <p class="supporter-name">• ママカラさん</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="supporter-section">
-                    <h3 class="supporter-title">トレカお迎え</h3>
-                    <div class="supporter-list">
-                        <div>
-                            <p>• ダリンリヒさん</p>
-                            <p>• きゅにおさん</p>
-                            <p>• 桃田えびさん</p>
+                <div class="supporter-group">
+                    <h4 class="supporter-category">ma—kun & コケミーお迎え</h4>
+                    <div class="supporter-names">
+                        <div class="supporter-column">
+                            <p class="supporter-name">• たけおさん</p>
+                            <p class="supporter-name">• オッスさん</p>
                         </div>
-                        <div>
-                            <p>• ゆきりなさん</p>
-                            <p>• じぇしーさん</p>
+                        <div class="supporter-column">
+                            <p class="supporter-name">• vasquezさん</p>
+                            <p class="supporter-name">• tetsucraftさん</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="supporter-group">
+                    <h4 class="supporter-category">トレカお迎え</h4>
+                    <div class="supporter-names">
+                        <div class="supporter-column">
+                            <p class="supporter-name">• ダリンリヒさん</p>
+                            <p class="supporter-name">• きゅにおさん</p>
+                            <p class="supporter-name">• 桃田えびさん</p>
+                        </div>
+                        <div class="supporter-column">
+                            <p class="supporter-name">• ゆきりなさん</p>
+                            <p class="supporter-name">• じぇしーさん</p>
                         </div>
                     </div>
                 </div>
@@ -974,13 +1401,17 @@
     </section>
 
     <!-- フラコレ応援グッズ -->
-    <section>
+    <section class="support-goods-section">
         <div class="container">
-            <h2 class="section-title">フラコレ応援グッズ</h2>
-            <div class="text-content" id="support-goods-section">
-                <p>フラコレ2025の応援グッズも販売しています。<br>ぜひ皆様の応援で、フラコレ会場に<br>もっとたくさんの花を咲かせてください。</p>
-                <a href="#" class="button">フラコレ応援グッズ販売ページはこちら</a>
+            <h2 class="support-goods-title">Fundraising</h2>
+            <h3 class="support-goods-subtitle">フラコレ応援グッズ</h3>
+            <div class="support-goods-content">
+                <p>フラコレの運営費用として使わせていただく応援グッズを販売しています。ぜひ皆様の応援で、フラコレ会場にたくさんの花を咲かせてください。</p>
+                <div class="support-goods-button-container">
+                    <a href="#" class="support-goods-button">フラコレ応援グッズ販売ページはこちら</a>
+                </div>
             </div>
+            <img src="content/images/08_support/support.webp" alt="フラコレ応援グッズ" class="support-goods-image">
         </div>
     </section>
 
