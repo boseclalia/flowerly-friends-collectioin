@@ -38,7 +38,7 @@
         
         /* Joinセクションのコンテナ */
         .join-section .container {
-            padding: 24px;
+            padding: 24px 0;
         }
         
         /* ヘッダー */
@@ -93,6 +93,7 @@
             font-weight: 500;
             font-size: 16px;
             display: inline-block;
+            padding-bottom: 16px;
         }
         
         /* Aboutセクション */
@@ -148,6 +149,7 @@
             color: #555;
             margin-bottom: 32px;
             padding: 0 40px;
+            text-align: left;
         }
         
         /* 連続スライダー */
@@ -233,7 +235,7 @@
         }
         
         .modal-content {
-            background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
+            background: linear-gradient(135deg, #73bac7 0%, #7f7ccd 100%);
             padding: 32px;
             border-radius: 16px;
             width: 80%;
@@ -494,7 +496,7 @@
         /* Joinセクション */
         .join-section {
             background: linear-gradient(-415deg, #f29bc6 35%, #9980c6 100%);
-            padding-bottom: 24px;
+            padding: 24px 0;
         }
         
         .join-title {
@@ -520,8 +522,108 @@
             font-size: 16px;
             line-height: 1.8;
             color: white;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             text-align: left;
+            padding: 0 16px;
+        }
+        
+        .join-tips {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 32px 0;
+        }
+        
+        .join-tip:nth-child(1) {
+            align-self: flex-start;
+            max-width: 340px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            position: relative;
+        }
+        
+        .join-tip:nth-child(1)::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            height: 150px;
+            background-image: url('content/images/11_svg/flower1.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 1;
+        }
+        
+        .join-tip:nth-child(2) {
+            align-self: flex-end;
+            max-width: 340px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        
+        .join-tip:nth-child(3) {
+            align-self: flex-start;
+            max-width: 340px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        
+        .join-tip {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        .join-tip::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border-radius: 14px;
+            z-index: -1;
+        }
+        
+        .join-tip-number {
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+        
+        .join-tip h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .join-tip p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+            text-align: left;
+        }
+        
+        .join-tip a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+        }
+        
+        .join-tip a:hover {
+            color: white;
         }
         
         .join-image {
@@ -531,6 +633,15 @@
             border-radius: 8px;
             margin: 24px auto;
             display: block;
+        }
+        
+        .join-footer-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: white;
+            margin: 24px 0;
+            text-align: left;
+            padding: 0 24px;
         }
         
         .join-button-container {
@@ -1259,7 +1370,7 @@
             <div class="schedule-list">
                 <div class="schedule-header">
                     <div class="schedule-year">2026</div>
-                    <div class="entrance-fee-inline">入場無料</div>
+                    <div class="entrance-fee-inline">入場無料！</div>
                 </div>
                 <div class="schedule-item">
                     <div class="schedule-line">2/10（火） 11:00-19:00</div>
@@ -1306,9 +1417,34 @@
             <h2 class="join-title">Join!</h2>
             <h3 class="join-subtitle">出展者募集</h3>
             <div class="join-description">
-                第３回目のフラコレにアート作品を展示しませんか？お花をテーマにした作品ならなんでもOK！これまで制作したものや新作も大歓迎です。出展について詳しい情報や申し込みはDiscord（コミュニティ）にて！
+                第３回目のフラコレにアート作品を展示しませんか？お花をテーマにした作品ならなんでもOK！これまで制作したものや新作も大歓迎です。
             </div>
-            <img src="content/images/05_join/join.webp" alt="参加募集" class="join-image">
+            
+            <div class="join-tips">
+                <div class="join-tip">
+                    <span class="join-tip-number">Tips 1</span>
+                    <h4>作品・グッズ販売</h4>
+                    <p>フラコレの出展者は展示する作品を販売することができます。グッズもギャラリーに置けるので合わせてどうぞ！</p>
+                </div>
+                <div class="join-tip">
+                    <span class="join-tip-number">Tips 2</span>
+                    <h4>先行予約受付</h4>
+                    <p>作品の先行予約をフラコレ運営がお手伝いします。出展者が決まった後このサイトから予約を受け付けます！</p>
+                </div>
+                <div class="join-tip">
+                    <span class="join-tip-number">Tips 3</span>
+                    <h4>売上寄付</h4>
+                    <p>売上の10%を「ネパールで暮らすチベット人難民」を支援するTCPに寄付させていただきます。<br>
+                    <a href="https://tcp-np.com/" target="_blank">TCPについて</a></p>
+                </div>
+            </div>
+            
+            <img src="content/images/05_join/join.webp" alt="参加募集" class="join-image" style="display: none;">
+            
+            <div class="join-footer-text">
+                出展について詳しい情報や申し込みはDiscord（コミュニティ）にて！
+            </div>
+            
             <div class="join-button-container">
                 <a href="#" class="join-button">出展の申し込みはこちら</a>
             </div>
