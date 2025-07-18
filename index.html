@@ -27,6 +27,7 @@
             color: #333;
             background-color: #fef2ff;
             font-size: 16px;
+            letter-spacing: 0.1em;
         }
         
         /* レイアウト */
@@ -94,6 +95,7 @@
             font-size: 16px;
             display: inline-block;
             padding-bottom: 16px;
+            letter-spacing: 0.1em;
         }
         
         /* Aboutセクション */
@@ -293,6 +295,7 @@
             font-weight: bold;
             color: white;
             font-size: 16px;
+            letter-spacing: 0.1em;
         }
         
         @keyframes slide {
@@ -385,6 +388,7 @@
             border: 2px solid #b39ddb;
             padding: 8px 16px;
             border-radius: 4px;
+            letter-spacing: 0.1em;
         }
         
         .schedule-list {
@@ -399,6 +403,7 @@
             border-bottom: 1px solid rgba(179, 157, 219, 0.2);
             padding: 12px 0;
             font-size: 16px;
+            letter-spacing: 0.1em;
         }
         
         .schedule-item:last-child {
@@ -465,6 +470,7 @@
             margin-bottom: 16px;
             text-align: left;
             line-height: 1.6;
+            letter-spacing: 0.1em;
         }
         
         .venue-image {
@@ -525,6 +531,7 @@
             margin-bottom: 32px;
             text-align: left;
             padding: 0 16px;
+            letter-spacing: 0.1em;
         }
         
         .join-tips {
@@ -548,14 +555,15 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            width: auto;
-            height: 150px;
+            width: 80px;
+            height: 140px;
             background-image: url('content/images/11_svg/flower1.svg');
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.3;
-            z-index: 1;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
         }
         
         .join-tip:nth-child(2) {
@@ -563,6 +571,24 @@
             max-width: 340px;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            position: relative;
+        }
+        
+        .join-tip:nth-child(2)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 140px;
+            background-image: url('content/images/11_svg/flower2.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
         }
         
         .join-tip:nth-child(3) {
@@ -570,6 +596,59 @@
             max-width: 340px;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+            position: relative;
+        }
+        
+        .join-tip:nth-child(3)::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 140px;
+            background-image: url('content/images/11_svg/flower3.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .join-tip:nth-child(4) {
+            align-self: flex-end;
+            max-width: 340px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            position: relative;
+        }
+        
+        .join-tip:nth-child(4)::after {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 140px;
+            background-image: url('content/images/11_svg/flower4.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .join-tip:nth-child(2),
+        .join-tip:nth-child(4) {
+            text-align: right;
+        }
+        
+        .join-tip:nth-child(2) p,
+        .join-tip:nth-child(4) p {
+            text-align: left;
         }
         
         .join-tip {
@@ -599,14 +678,18 @@
             font-weight: 600;
             color: white;
             margin-bottom: 12px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
+            position: relative;
+            z-index: 1;
         }
         
         .join-tip h4 {
             font-size: 18px;
             font-weight: 600;
-            color: white;
+            color: #fffb43;
             margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
         }
         
         .join-tip p {
@@ -615,6 +698,8 @@
             color: rgba(255, 255, 255, 0.9);
             margin-bottom: 0;
             text-align: left;
+            position: relative;
+            z-index: 1;
         }
         
         .join-tip a {
@@ -640,8 +725,29 @@
             line-height: 1.8;
             color: white;
             margin: 24px 0;
-            text-align: left;
+            text-align: center;
             padding: 0 24px;
+            letter-spacing: 0.1em;
+        }
+        
+        .join-arrow {
+            text-align: center;
+            margin: 16px 0;
+            font-size: 24px;
+            color: white;
+            animation: bounce 1.5s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
         }
         
         .join-button-container {
@@ -663,6 +769,7 @@
             border: none;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 121, 166, 0.6);
             animation: glow 2s ease-in-out infinite alternate;
+            letter-spacing: 0.1em;
         }
         
         .join-button:hover {
@@ -819,6 +926,7 @@
             font-size: 16px;
             font-weight: 500;
             color: #333;
+            letter-spacing: 0.1em;
         }
         
         /* グッズセクション */
@@ -951,6 +1059,7 @@
             font-size: 16px;
             font-weight: 500;
             color: #333;
+            letter-spacing: 0.1em;
         }
         
         /* 作品販売セクション */
@@ -1221,6 +1330,7 @@
             font-size: 16px;
             font-weight: 500;
             color: #333;
+            letter-spacing: 0.1em;
         }
         
         /* フッター */
@@ -1434,15 +1544,24 @@
                 <div class="join-tip">
                     <span class="join-tip-number">Tips 3</span>
                     <h4>売上寄付</h4>
-                    <p>売上の10%を「ネパールで暮らすチベット人難民」を支援するTCPに寄付させていただきます。<br>
+                    <p>ネパールで暮らすチベット人難民を支援するTCPに売上の10%を寄付させていただきます。<br>
                     <a href="https://tcp-np.com/" target="_blank">TCPについて</a></p>
+                </div>
+                <div class="join-tip">
+                    <span class="join-tip-number">Tips 4</span>
+                    <h4>電子版作品集</h4>
+                    <p>出展者の作品が見れるフラコレの電子版作品集に収録します。前回はAmazonのKindleで無料配布しました。</p>
                 </div>
             </div>
             
             <img src="content/images/05_join/join.webp" alt="参加募集" class="join-image" style="display: none;">
             
             <div class="join-footer-text">
-                出展について詳しい情報や申し込みはDiscord（コミュニティ）にて！
+                出展について詳しい情報や申し込みは<br>Discord（コミュニティ）にて！
+            </div>
+            
+            <div class="join-arrow">
+                ↓
             </div>
             
             <div class="join-button-container">
