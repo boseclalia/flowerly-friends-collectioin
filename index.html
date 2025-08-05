@@ -1427,9 +1427,96 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+        /* セクションフェードインアニメーション */
+        section, .header {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        section.fade-in, .header.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 背景アニメーション */
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-flower {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            opacity: 0;
+            will-change: opacity, transform;
+        }
+        
+        .bg-flower.duration-5s {
+            animation: fadeInOut5s 6.5s ease-in-out forwards;
+        }
+        
+        .bg-flower.duration-8s {
+            animation: fadeInOut8s 9.5s ease-in-out forwards;
+        }
+        
+        .bg-flower img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        @keyframes fadeInOut5s {
+            0% { 
+                opacity: 0; 
+                transform: rotate(-10deg); 
+            }
+            15% { 
+                opacity: 1; 
+                transform: rotate(0deg); 
+            }
+            85% { 
+                opacity: 1; 
+                transform: rotate(0deg); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: rotate(10deg); 
+            }
+        }
+        
+        @keyframes fadeInOut8s {
+            0% { 
+                opacity: 0; 
+                transform: rotate(-10deg); 
+            }
+            10% { 
+                opacity: 1; 
+                transform: rotate(0deg); 
+            }
+            90% { 
+                opacity: 1; 
+                transform: rotate(0deg); 
+            }
+            100% { 
+                opacity: 0; 
+                transform: rotate(10deg); 
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- 背景アニメーション -->
+    <div id="background-animation"></div>
+    
     <!-- ヘッダー -->
     <header class="header">
         <div class="container">
@@ -2039,6 +2126,100 @@
                 modal.style.display = 'none';
             }
         }
+        
+        // 背景アニメーション - パターンB: セット単位ループ
+        function startBackgroundAnimation() {
+            const flowers = ['flo1.svg', 'flo2.svg', 'flo3.svg', 'flo4.svg', 'flo5.svg'];
+            const container = document.getElementById('background-animation');
+            
+            function showFlower(index) {
+                const flower = document.createElement('div');
+                
+                // ランダムで5秒または8秒の表示時間を選択
+                const isLongDuration = Math.random() > 0.5;
+                const duration = isLongDuration ? 8 : 5;
+                const animationDuration = isLongDuration ? 9500 : 6500;
+                
+                flower.className = `bg-flower duration-${duration}s`;
+                
+                // ランダム位置 (-10% ~ 110% の範囲)
+                const x = Math.random() * 120 - 10; // -10% ~ 110%
+                const y = Math.random() * 120 - 10; // -10% ~ 110%
+                
+                // ランダムサイズ (60px ~ 180px)
+                const size = Math.random() * 120 + 60;
+                
+                flower.style.left = x + 'vw';
+                flower.style.top = y + 'vh';
+                flower.style.width = size + 'px';
+                flower.style.height = size + 'px';
+                
+                // 画像追加
+                const img = document.createElement('img');
+                img.src = `content/images/12_background/${flowers[index]}`;
+                img.alt = 'flower background';
+                flower.appendChild(img);
+                
+                container.appendChild(flower);
+                
+                // アニメーション完了後に要素削除
+                setTimeout(() => {
+                    if (flower.parentNode) {
+                        flower.remove();
+                    }
+                }, animationDuration);
+            }
+            
+            function startFlowerCycle() {
+                // 10個の画像を0.4秒間隔で順次表示
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(() => {
+                        showFlower(Math.floor(Math.random() * flowers.length));
+                    }, i * 400);
+                }
+                
+                // 10個表示完了後、0.5秒間隔でループ
+                setTimeout(startFlowerCycle, 10 * 400 + 500);
+            }
+            
+            // 初回実行
+            startFlowerCycle();
+        }
+        
+        // セクションのふわっと表示制御
+        let backgroundAnimationStarted = false;
+        
+        function initScrollAnimations() {
+            // ヘッダーと表示されているセクションを対象
+            const header = document.querySelector('.header');
+            const sections = document.querySelectorAll('section:not([style*="display: none"])');
+            const allElements = [header, ...sections];
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        console.log('フェードイン実行:', entry.target.className);
+                        entry.target.classList.add('fade-in');
+                        
+                        // ヘッダーが表示された時に背景アニメーション開始
+                        if (!backgroundAnimationStarted && entry.target.classList.contains('header')) {
+                            startBackgroundAnimation();
+                            backgroundAnimationStarted = true;
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.2, // 20%見えた時点で発動
+                rootMargin: '0px 0px -50px 0px' // 50px手前で発動
+            });
+            
+            allElements.forEach((element) => {
+                observer.observe(element);
+            });
+        }
+        
+        // ページロード時に初期化
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
     </script>
 </body>
 </html>
