@@ -30,15 +30,25 @@
             font-family: 'Noto Sans JP', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-image: url('content/images/12_background/background.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
             font-size: 16px;
             letter-spacing: 0.1em;
             overflow-x: hidden;
             width: 100%;
+        }
+        
+        /* 擬似固定背景レイヤー */
+        .fixed-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('content/images/12_background/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
         }
         
         /* レイアウト */
@@ -1413,6 +1423,11 @@
         
         /* レスポンシブ */
         @media (max-width: 768px) {
+            /* スマホで背景画像をぴったりサイズに */
+            .fixed-background {
+                background-size: contain;
+            }
+            
             .container {
                 padding: 0 0px;
             }
@@ -1449,6 +1464,9 @@
     </style>
 </head>
 <body>
+    <!-- 固定背景レイヤー -->
+    <div class="fixed-background"></div>
+    
     <!-- ヘッダー -->
     <header class="header">
         <div class="container">
@@ -1456,7 +1474,7 @@
                 <img src="content/images/01_header/logo.png" alt="Flowerly Friends Collection">
             </div>
             <div class="hero-text" id="hero-section">
-                <p>お花をモチーフにした作品が集うFlowerly Friends Collection（フラコレ）。フラワリーフレンズの多才な仲間たちのアートを楽しみ寄付活動もできるアート展示会を2026年2月に開催します。</p>
+                <p>お花をモチーフにした作品が集うFlowerly Friends Collection（フラコレ）。多才なクリエイターのアートを楽しみ寄付活動もできるアート展示会を2026年2月に開催します。</p>
             </div>
             <div class="organizer">主催：Flowerly Friends Cosplay</div>
         </div>
@@ -1468,7 +1486,7 @@
             <h2 class="about-title">About</h2>
             <h3 class="about-subtitle">フラコレについて</h3>
             <div class="about-content">
-                <p>フラコレはこれまで2024年、2025年と開催してきました。年々参加者が増えにぎわいを見せています。どのコミュニティに所属しているかは関係なくクリエイターがイラストや写真など思い思いの「お花」を表現できる場所がフラコレです。グッズや作品販売の売り上げの一部を寄付しています。</p>
+                <p>フラコレはこれまで2024年、25年に開催。どのコミュニティに所属しているか関係なく年々参加者が増えてにぎわいを見せています。クリエイターがイラストや写真など思い思いの「お花」を自由に表現できる場がフラコレです。</p>
             </div>
             <div class="slider-container">
                 <div class="slider-track" id="sliderTrack">
